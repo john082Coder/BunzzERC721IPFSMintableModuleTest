@@ -1,0 +1,1 @@
+safeMint, ipfs, tokenURI
