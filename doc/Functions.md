@@ -72,7 +72,6 @@ No arguments
 
 # READ(main)
 
-
 ## totalSupply
 Returns the amount of tokens in existence
 

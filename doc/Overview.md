@@ -19,7 +19,7 @@ This is very useful for creating nft collection and host it's metadata on ipfs.
 - github repo URL
     https://github.com/john082Coder/BunzzERC721IPFSMintableModuleTest
 - simple dapp URL
-    https://bunzz-erc-721-full-module-test.vercel.app/
+    https://bunzz-erc-721-ipfs-mintable-module-test.vercel.app/
 
 
 ---
