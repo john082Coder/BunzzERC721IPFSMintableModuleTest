@@ -9,6 +9,7 @@
 This module has the feature of minting as many tokens as you want and hosting their metadata on ipfs, in addition, the tokens can be transferred to any address without restrictions.
 
 Implements all the functionalities of ERC721. The difference between this and the standard ERC721 is that this one is specially crafted to be able to mint new tokens and store their metadata on the IPFS.
+The ERC721IPFSMintable contract inherits from the ERC721Enumerable and Ownable contracts from OpenZeppelin. It manages a counter for token IDs and a mapping from token IDs to token URIs.
 
 ## Use case
 

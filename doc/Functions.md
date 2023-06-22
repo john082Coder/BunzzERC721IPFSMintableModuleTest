@@ -1,5 +1,12 @@
 # WRITE(main)
 
+## transferOwnership
+Transfer the ownership rights from one account to another
+
+|Name|Type|Description|Example|Default|
+|--- |---|---|---|---|
+|newOwner|address|The account that will get the new owner rights||N/A|
+
 ## transferFrom
 Transfer a particular tokenId from the token owner to an certai address if the caller have the permision to transfer it
 
@@ -48,37 +55,19 @@ Sets or unsets the approval of a given operator An operator is allowed to transf
 |approved|bool|Approval status|
 
 
-## mint
-Can only be called by the contract owner. Needs to provide the address that will receive the NFT. Needs to provide a token ID for metadata
+## safeMint
+Mint new tokens
 
 |Name|Type|Description|
 |--- |---|---|
 |to|address|The tokens receiver|
-|_tokenId|uint256|New token id that will be minted|
+|metadataURI|string|The uri of the metadata, represented by an ipfs hash or api link|
 
-## revokeRole
-Revokes role from account
+## renounceOwnership
+Renounce the ownership rights of the contract
 
-|Name|Type|Description|
-|--- |---|---|
-|role|bytes32|The role id|
-|account|address|The account that will be rovoked from role|
+No arguments
 
-## renounceRole
-Renounce role from account
-
-|Name|Type|Description|
-|--- |---|---|
-|role|bytes32|The role id|
-|account|address|The account that will renounce the role|
-
-## grantRole
-Grants a role to account
-
-|Name|Type|Description|
-|--- |---|---|
-|role|bytes32|The role id|
-|account|address|The account that will be granted the role|
 
 
 # READ(main)
@@ -88,7 +77,6 @@ Grants a role to account
 Returns the amount of tokens in existence
 
 No arguments
-
 
 ## supportsInterface
 Returns a boolean that tells us if the contract supports royalties
@@ -104,7 +92,6 @@ Returns the token amount owned by an address
 |--- |---|---|
 |owner|address|The account which you want to check the balance|
 
-
 ## ownerOf
 Returns the owner of the NFT specified by tokenId
 
@@ -112,29 +99,34 @@ Returns the owner of the NFT specified by tokenId
 |--- |---|---|
 |tokenId|uint256|The id of the token you want to check its owner of|
 
+## owner
+Returns the owner of the contract
+
+No arguments
+
 ## name
 Retrieves collection name
 
 No arguments
 
 ## symbol
-Retrieves collection name
+Returns the symbol of the collection
 
 No arguments
 
 ## tokenURI
-Returns the uri of the metadata
+Returns the ipfs link where metadata is stored
 
 |Name|Type|Description|
 |--- |---|---|
 |tokenId|uint256|The id of the token|
 
 ## tokenOfOwnerByIndex
-Returns all the tokens owned by an address and given index
+Returns a token ID owned by owner at a given index of its token list. Use along with balanceOf to enumerate all of owners tokens.
 
 |Name|Type|Description|
 |--- |---|---|
-|owner|address|The token owner|
+|owner|address|The account on which you want to retrieve the token index upon|
 |index|uint256|The index of the token|
 
 ## tokenByIndex
@@ -153,34 +145,13 @@ Gets the approved address for a token ID, or zero if no address set Reverts if t
 |tokenId|uint256|The token id you will retrieves the approvals|
 
 ## isApprovedForAll
-Tells whether an operator is approved by a given owner.
+Retrieves if a user is approved to operate over all the tokens owned by another user
 
 |Name|Type|Description|
 |--- |---|---|
 |owner|address|The address of the tokens owner|
-|operator|uint256|The account that will get the rights to operate over owner balance|
+|operator|uint256|The operator that have the rights to operate over user balance|
 
-## hasRole
-Returns true if account has been granted role
 
-|Name|Type|Description|
-|--- |---|---|
-|role|bytes32|The role id|
-|account|address|The account that will be granted the role|
 
-## getRoleAdmin
-Returns the admin role that controls roles
 
-|Name|Type|Description|
-|--- |---|---|
-|role|bytes32|The role id|
-
-## MINTER_ROLE
-The role for minters
-
-No arguments
-
-## DEFAULT_ADMIN_ROLE
-The starting admin for all roles
-
-No arguments
